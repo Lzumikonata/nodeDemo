@@ -6,6 +6,8 @@
 </head>
 <body>
 <h1>hello node</h1>
+<input id="name">
+<button id="submit" onclick="submit()">提交</button>
 <script>
   window.fetch('http://127.0.0.1:8081/users_list', {
     method: 'GET'
@@ -13,8 +15,23 @@
     //console.log(res)
     return res.json()
   }).then(res => {
-   console.log(JSON.parse(res))
+   console.log(res)
   })
+  let submit = () => {
+    window.fetch('http://127.0.0.1:8081/user_name', {
+      method: 'POST',
+      mode: 'cors',
+      headers: {'Content-type': 'application/json'},
+      body: JSON.stringify({
+        'uid': 0,
+        "name": 'hello'
+      })
+    }).then(res => {
+      return res.json()
+    }).then(res => {
+      console.log(res)
+    })
+  }
 </script>
 </body>
 </html>

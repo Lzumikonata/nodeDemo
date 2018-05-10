@@ -10,6 +10,10 @@
   "author": "wuke",
   "license": "ISC",
   "devDependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2"
+  },
+  "dependencies": {
+    "mysql": "^2.15.0"
   }
 }
