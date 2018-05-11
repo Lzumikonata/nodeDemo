@@ -1,7 +1,7 @@
  {
   "app": [
     {
-    "name": "API",
+    "name": "process-api",
     "script": "/home/wuke/server/nodeDemo/current/server.js",//用来启动的脚本
       // 启动项目所需要的环境变量
     "env": {
