@@ -9,7 +9,8 @@
 <input id="name">
 <button id="submit" onclick="submit()">提交</button>
 <script>
-  window.fetch('http://127.0.0.1:8081/users_list', {
+  const BASE_URL = 'http://120.79.92.83:8081'
+  window.fetch(`${BASE_URL}/users_list`, {
     method: 'GET'
   }).then(res => {
     //console.log(res)
@@ -18,7 +19,7 @@
    console.log(res)
   })
   let submit = () => {
-    window.fetch('http://127.0.0.1:8081/user_name', {
+    window.fetch(`${BASE_URL}/user_name`, {
       method: 'POST',
       mode: 'cors',
       headers: {'Content-type': 'application/json'},
