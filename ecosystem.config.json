@@ -13,8 +13,8 @@
      }
   ],
   // 部署
-  "start": {
-  "alpha": {
+  "deploy": {
+    "alpha": {
     "user": "wuke",
       "host": "120.79.92.83:22",
       "ref": "origin/master",
