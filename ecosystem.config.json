@@ -20,7 +20,7 @@
       "ref": "origin/master",
       "repo": "git@github.com:Lzumikonata/nodeDemo.git",
       "path": "/home/wuke/server/nodeDemo",//要发布到服务器上哪个目录下面
-      "post-deploy": "pm2 startOrRestart ecosystem.config.js --env alpha"//发布之后执行的动作 执行开启或更新pm2运行的服务
+      "post-deploy": "pm2 startOrRestart ecosystem.config.json --env alpha"//发布之后执行的动作 执行开启或更新pm2运行的服务
       }
     }
   }
