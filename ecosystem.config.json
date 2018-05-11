@@ -2,7 +2,7 @@
   "app": [
     {
     "name": "API",
-    "script": "server.js",//用来启动的脚本
+    "script": "./server.js",//用来启动的脚本
       // 启动项目所需要的环境变量
     "env": {
       "COMMON_VARIABLE":"true" //设置为true 可以在启动的时传入外部的变量进去
