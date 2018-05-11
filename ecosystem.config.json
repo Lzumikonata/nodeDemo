@@ -16,7 +16,7 @@
   "deploy": {
     "alpha": {
     "user": "wuke",
-      "host": "120.79.92.83:22",
+      "host": "120.79.92.83",
       "ref": "origin/master",
       "repo": "git@github.com:Lzumikonata/nodeDemo.git",
       "path": "/home/wuke/server/nodeDemo",//要发布到服务器上哪个目录下面
