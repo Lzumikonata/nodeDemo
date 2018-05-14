@@ -9,8 +9,10 @@
 <input id="name">
 <button id="submit" onclick="submit()">提交</button>
 <script>
-  const BASE_URL = 'http://120.79.92.83:8081'
-  window.fetch(`${BASE_URL}/users_list`, {
+  const CLOUD_URL = 'http://120.79.92.83:8081'
+  const LOCAL_URL = 'http://127.0.0.1:8081'
+
+  window.fetch(`${LOCAL_URL}/users_list`, {
     method: 'GET'
   }).then(res => {
     //console.log(res)
@@ -19,13 +21,12 @@
    console.log(res)
   })
   let submit = () => {
-    window.fetch(`${BASE_URL}/user_name`, {
+    window.fetch(`${LOCAL_URL}/user_name`, {
       method: 'POST',
       mode: 'cors',
       headers: {'Content-type': 'application/json'},
       body: JSON.stringify({
-        'uid': 0,
-        "name": 'hello'
+        "name": '卧槽'
       })
     }).then(res => {
       return res.json()

@@ -1,8 +1,20 @@
-const sessionCotroller = {
-    getList: (req, res) => {
-      console.log('err?')
-      const result = {'name': '1', 'uid': 2}
-      res.send(result)
-    }
-}
+const adminModel = require('../models/admin')
+ sessionCotroller = {
+    getAdmin(req, res, next) {
+     const name = req.body.name
+    // console.log(user_name)
+     try {
+       adminModel.find({name}, (err,docs) => {
+         res.send({
+           status: 1,
+           docs
+         })
+       } )
+     } catch (err) {
+       console.log(err)
+     }
+   },
+ }
+  
+
 module.exports = sessionCotroller
