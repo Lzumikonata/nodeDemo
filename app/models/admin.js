@@ -2,12 +2,13 @@ const mongoose = require('mongoose')
 const schema = mongoose.Schema
 
 const adminSchema = new schema({
-  name: String,
-  value: String,
-  human: String
+  adminName: String,
+  salt: String,
+  encryptPwd: String,
+  token: String
 })
 adminSchema.index({id: 1})
 
-const Admin = mongoose.model('site', adminSchema )
+const Admin = mongoose.model('admin', adminSchema )
 
 module.exports = Admin
