@@ -65,7 +65,7 @@ const createServer = () => {
   const jsonParser = bodyParser.json()
   
   app.all('*', function(req, res, next) { //设置请求头
-    res.header("Access-Control-Allow-Origin", "http://localhost:8080");
+    res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "x-requested-with, accept, origin, content-type");
     res.header("Access-Control-Expose-Headers", "Token")
     res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
