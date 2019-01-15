@@ -28,7 +28,7 @@ module.exports = {
       ref  : 'origin/master',
       repo : 'git@github.com:Lzumikonata/nodeDemo.git',
       path : '/home/wuke/server/nodeDemo',
-      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production'
+      'post-deploy' : 'git pull origin master && npm install && pm2 reload ecosystem.config.js --env production'
     },
   }
 };

@@ -1,12 +1,26 @@
 import express from 'express'
 const bodyParser = require('body-parser')
 const routes = require('./routes/index')
-import './db/db.config'
+// import './db/db.config'
+import path from 'path'
 import validate from './app/validate/authority.validate'
 import adminLogin from './app/controller/admin'
-
 import userAction from './app/controller/users'
 import fs from 'fs'
+
+import { execFile } from 'child_process'
+
+const shPath = path.resolve(__dirname, 'command.sh')
+console.log(shPath)
+execFile(shPath, ['--version'], (error, stdout, stderr) => {
+    if (error) {
+        console.error(`执行出错: ${error}`);
+        return;
+    }
+    console.log(`stdout: ${stdout}`);
+    console.log(`stderr: ${stderr}`);
+})
+
 // import path from 'path'
 // console.log(__dirname)
 // const filePath = path.resolve(__dirname, '../message.txt')
@@ -81,16 +95,16 @@ const createServer = () => {
   //     return {"ID": row.id, "name": row.name, "psw": row.password, "pro": row.profession}
   //   }, 'testCsv')
   // })
-   app.post('/user_admin', adminLogin.getAdmin)
+  //  app.post('/user_admin', adminLogin.getAdmin)
  //  app.use(validate)
    routes(app)
   //app.use(urlencodedParser)
-  app.post('/user_name',(req, res) => {
-    console.log('err?')
-    const result = {'name': req.body.name, 'uid': '2'}
-    res.status(200)
-    res.json(result)
-  })
+  // app.post('/user_name',(req, res) => {
+  //   console.log('err?')
+  //   const result = {'name': req.body.name, 'uid': '2'}
+  //   res.status(200)
+  //   res.json(result)
+  // })
   return app
 }
 module.exports = createServer()
