@@ -12,7 +12,7 @@ import { execFile } from 'child_process'
 
 const shPath = path.resolve(__dirname, 'command.sh')
 console.log(shPath)
-execFile(shPath, ['--version', 'xixi'], (error, stdout, stderr) => {
+execFile(shPath, ['-m', 'edit my commit message again'], (error, stdout, stderr) => {
     if (error) {
         console.error(`执行出错: ${error}`);
         return;
