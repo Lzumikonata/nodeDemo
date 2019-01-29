@@ -14,8 +14,8 @@ const shPath = path.resolve(__dirname, 'command.sh')
 console.log(shPath)
 execFile(shPath, ['-m', 'edit my commit message again'], null, (error, stdout, stderr) => {
     if (error) {
-        console.error(`执行出错: ${error}`);
-        return;
+        console.error(`执行出错: ${error}`)
+        return
     }
     console.log(`stdout: ${stdout}`);
     console.log(`stderr: ${stderr}`);

@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const fs = require('fs')
 
 const nodeModules = {}
 fs.readdirSync("node_modules")
@@ -9,7 +10,7 @@ fs.readdirSync("node_modules")
     nodeModules[mod] = 'commonjs' + mod
   })
 module.exports = {
-  entry: __dirname + '/server.js', //已多次提及的唯一入口文件
+  entry: __dirname + '/hook.js', //已多次提及的唯一入口文件
   output: {
     path: __dirname + '/build',
     filename: 'bundle-[hash].js',
