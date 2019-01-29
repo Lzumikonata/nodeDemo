@@ -7,7 +7,7 @@
 import Socket from './app/services/socket'
 
 const app = require('./application')
-  const server = app.listen(2333, () => {
+  const server = app.listen(2333,'localhost', () => {
     let host = server.address().address
     let port = server.address().port
     console.log(`Example app listening at http://${host}`, port);
